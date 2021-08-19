@@ -1,0 +1,83 @@
+
+body {
+      text-align: center;
+}
+header span {
+      color: teal;font: 1em sans-serif;
+}
+.container {
+
+      width: 970px;
+      text-align: center;
+      margin:  0 auto;
+}
+
+
+
+.box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      border: 2px ;
+      color: honeydew;
+      font-size: 26px;
+     
+}
+.box h4{
+      font-size: 40px;
+}
+.box-content:nth-child(1){
+      background :coral;
+}
+.box-content:nth-child(2){
+      background :greenyellow;
+}
+.box-content:nth-child(3){
+      background: teal;
+}
+.deposit {
+      display: grid;
+      grid-template-columns: repeat(2 , 1fr);
+      /* background-color: indianred; */
+      margin: 20px 0px;
+      grid-gap: 30px;
+}
+.deposit h2 {
+      font-size: 30px;
+      color: white;
+
+}
+.deposit input {
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 20px;
+      outline: none;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      margin-bottom: 14px;
+}
+.deposit button {
+      padding: 10px;
+      cursor: pointer;
+      margin-bottom: 8px;
+}
+.deposit .content:nth-child(1) {
+      background: yellowgreen;
+      
+}
+.deposit .content:nth-child(2) {
+      background: #6d32cd;
+
+}
+.deposit button:hover {
+      background: teal;
+      color: white;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+}
+

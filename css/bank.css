@@ -1,0 +1,50 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+body {
+      margin: 0 auto;
+      width: 600px;
+      height: 800px;
+      text-align: center;
+}
+h1 {
+      font-size: 45px;
+ padding: 20px;
+ color: teal;
+}
+h3 {
+      font-size: 35px;
+}
+/* .form .form-item{
+      display: block;
+} */
+.form-item input {
+      display: block;
+      margin: 10px;
+      padding: 14px;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      width: 55%;
+}
+.form-item input::placeholder {
+      font-size: 20px;
+      text-transform: capitalize;
+}
+.form-item button {
+      font-size: 20px;
+      padding: 12px;
+      color: teal;
+      cursor: pointer;;
+}
+
+
+
+
+
+
+

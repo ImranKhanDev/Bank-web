@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Lets deposit or Withdraw some money !!</title>
+      <link rel="stylesheet" href="css/depsoit&withdraw.css">
+</head>
+<body>
+      <header>
+            <h1> Welcome : Bank of <span>Imran khan</span></h1>
+      </header>
+
+      <!-- present balence,withdraw & total balence -->
+
+      <div class="container">
+            <div class="box">
+                  <div class="box-content">
+                        <h2>Deposit</h2>
+                        <h4>$ <span id='deposit-total'>00</span></h4>
+                  </div>
+                  <div class="box-content">
+                        <h2>Withdraw</h2>
+                        <h4>$ <span id='withdraw-total'>00</span></h4>
+                  </div>
+                  <div class="box-content">
+                        <h2>Current Balence</h2>
+                        <h4>$ <span id='balence-total'>8500</span></h4>
+                  </div>
+            </div>
+
+            <!-- withdraw and tranfer section -->
+            <section>
+                  <div class="deposit">
+                        <div class="content">
+                              <h2>Deposit your money</h2>
+                              <input id="deposit-input"placeholder=" $ Deposit your money" type="text">
+                              <br>
+                              <button id="deposit-btn">Deposit</button>
+
+                        </div>
+                        <div class="content">
+                              <h2>Withdraw  your money</h2>
+                              <input id="withdraw-input"placeholder=" $ withdraw your money" type="text">
+                              <br>
+                              <button id="withdraw-btn">Withdraw</button>
+
+                        </div>
+                  </div>
+            </section>
+      </div>
+
+
+
+
+
+
+      <script src="js/deposit&withdraw.js"></script>
+      <script src="js/deposit.js"></script>
+</body>
+</html>
