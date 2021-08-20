@@ -1,53 +1,59 @@
 
+// deposit-input & withdraw-input
 function getInputValue(inputId) {
-      const depositInput = document.getElementById(inputId);
-      const depositInputText = depositInput.value;
-      const depositAmount = parseFloat(depositInputText);
+      const inputField = document.getElementById(inputId);
+      const inputAmountText = inputField.value;
+      const amountValue = parseFloat(inputAmountText);
     
     
 // clearing input field 
-      depositInput.value = '';
-      return depositAmount;
+      inputField.value = '';
+      return amountValue;
 }
+// update total field ( deposit-total & withdraw-total)
+function updateAllTotalField(totalIdField,amount) {
+      const totalField = document.getElementById(totalIdField,amount);
 
-//deposit btn 
+      const totalText = totalField.innerText;
 
-document.getElementById('deposit-btn').addEventListener('click', function () {
-      // const depositInput = document.getElementById('deposit-input');
-      // const depositInputText = depositInput.value;
-      // const depositAmount = parseFloat(depositInputText);
-      // console.log(depositAmount);
-      const depositAmount = getInputValue('deposit-input')
-
-
-      // deposit-box er moddhe k id ta ache seta k dhora
-
-      const depositTotal = document.getElementById('deposit-total');
-
-      const depositTotalText = depositTotal.innerText;
-
-      const depositTotalAmount = parseFloat(depositTotalText);
+      const totalAmount = parseFloat(totalText);
 
       // deposit total kora mane depositTotal er sateh depositAmount er sateh + kora
 
-      depositTotal.innerText = depositTotalAmount + depositAmount;
-      
+      totalField.innerText = totalAmount + amount;
+}
+ 
 
-      
+/* update total */
 
-      // update current balence , so i need the id of this variable
-
+function updateBalence(withdrawAmount,isAdd){
       const balenceTotal = document.getElementById('balence-total');
 
-      const balenceTotalText = balenceTotal.innerText;
+      const presentBalenceTotal = balenceTotal.innerText;
 
-      const getBalence = parseFloat(balenceTotalText);
+      const presentBalenceTotalText = parseFloat(presentBalenceTotal);
 
-      balenceTotal.innerText = getBalence + depositAmount;
+      if (isAdd == true) {
+            
+      balenceTotal.innerText = presentBalenceTotalText + withdrawAmount; 
+      }
+      else {
+            
+      balenceTotal.innerText = presentBalenceTotalText - withdrawAmount; 
+      }
+}
 
-      // console.log(getBalence);
+document.getElementById('deposit-btn').addEventListener('click', function () {
+      
+      const depositAmount = getInputValue('deposit-input')
+ 
+      if (depositAmount > 0) {
+            updateAllTotalField('deposit-total',depositAmount);
+      
+     
+      updateBalence(depositAmount,true);
 
-
+      }
 });
 
 // withdraw korar kaj shuru  tar jonno withdraw button ke dhorte hobe.
@@ -55,45 +61,14 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
 // Naming a variable for withdraw-btn
 const withdrawBtn = document.getElementById('withdraw-btn').addEventListener('click', function () {
       
-      // const withdrawInput = document.getElementById('withdraw-input');
-      // const withdrawInputText = withdrawInput.value;
-
-      // const withdrawAmount = parseFloat(withdrawInputText);
+      // get & update withdraw input
       const withdrawAmount = getInputValue('withdraw-input')
 
-      //withdrawAmount = withdraw-input
-
-      // console.log(withdrawAmount);
-     
-
-   // update withdraw total  
+      if (withdrawAmount > 0) {
+            updateAllTotalField('withdraw-total',withdrawAmount)
    
-      const withdrawTotal = document.getElementById('withdraw-total');
-
-      const withdrawTotalText = withdrawTotal.innerText;
-
-      const withdrawTotalAmount = parseFloat(withdrawTotalText);
-
-      
-
-      // withdrawTotalAmount = withdraw box er Text
-
-      withdrawTotal.innerText = withdrawTotalAmount + withdrawAmount;
-
-      // console.log(withdrawTotalAmount);
-
-        
-     // final work 
-     
-      // withdraw ja kora hoise ta total balence theke minus (-) kora
-
-      const balenceTotal = document.getElementById('balence-total');
-
-      const presentBalenceTotal = balenceTotal.innerText;
-
-      const presentBalenceTotalText = parseFloat(presentBalenceTotal);
-
-      balenceTotal.innerText = presentBalenceTotalText - withdrawAmount;
+      updateBalence(withdrawAmount,false);
+     }
 
 })
 
